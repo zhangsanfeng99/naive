@@ -1,0 +1,16 @@
+
+:443, pubgstats.xyz
+tls me@pubgstats.xyz
+route {
+ forward_proxy {
+   basic_auth sh2r2 sh2r4me
+   hide_ip
+   hide_via
+   probe_resistance
+  }
+ reverse_proxy  https://www.lovelive-anime.jp  { 
+   header_up  Host  {upstream_hostport}
+   header_up  X-Forwarded-Host  {host}
+  }
+}
+
